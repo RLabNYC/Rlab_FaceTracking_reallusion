@@ -71,7 +71,7 @@ There are multiple ways to have a fully rigged character and have a facial rig s
      - FBX Options are Mesh and Motion. 
      - Under include motion select "Current Pose"
 	 - Make sure "Delete hidden faces" IS NOT CHECKED (this is for blendshapes). 
-![reallusion](media/reallusion5.png)
+![reallusion](Media/reallusion5.png)
 
 Download your character as FBX. It should already be rigged and in a T-Pose. (Your character should start out as a t-pose by deafault). 
    - **Reallusion to Maya**
