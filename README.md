@@ -278,10 +278,8 @@ Here is a link to Apple’s blendshape guidelines: https://developer.apple.com/d
    - **Level Blueprint**
      - ![LevelBlueprint](https://i.ibb.co/Lk6RV6j/RLab-Sample-map-6-29-2020-3-44-14-PM-2.png)
    - **Animation Blueprint**
-   - **Fuse**
-      - ![Anim blueprint](https://i.ibb.co/dM0D37F/ABP-fuse1-6-29-2020-3-46-53-PM.png)
-   - **Makehuman**
-      - ![Anim blueprint](https://i.ibb.co/w7gffd9/Rlab-facetracking2-Unreal-Editor-6-29-2020-3-45-28-PM.png)
+   - **Example animation blueprint**
+      - ![reallusion blueprint](Media/reallusion13.png)
 
 
 
