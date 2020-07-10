@@ -61,145 +61,63 @@ There are multiple ways to have a fully rigged character and have a facial rig s
    - **After Opening CC3:**
    - Once you have downloaded Character Creator 3, open the program and in the content window, select base icon (It has two people), there will be several drop downs, select "Full body" and choose a CC3 female or male base. 
 
-![Reallusion](Media/reallusion3.png)
+![Reallusion model](Media/reallusion3.png)
 
    - After you select the base model, you are ready to export as a fbx file
-![Reallusion](Media/reallusion4.png)
+![Reallusion fbx](Media/reallusion4.png)
 
    - **Export settings**
      - Make sure you select Unreal.
      - FBX Options are Mesh and Motion. 
      - Under include motion select "Current Pose"
 	 - Make sure "Delete hidden faces" IS NOT CHECKED (this is for blendshapes). 
-![reallusion](Media/reallusion5.png)
+![reallusion fbx export](Media/reallusion5.png)
 
 Download your character as FBX. It should already be rigged and in a T-Pose. (Your character should start out as a t-pose by deafault). 
    - **Reallusion to Maya**
-	  -  Import the FBX into Maya. Choose the "Sculpting" layout from the top right "Workspaces" dropdown menu. It will change the layout of Maya to bring up the Blendshapes. This is a screenshot of what the blendshapes will come out as when you open the Fuse FBX file in Maya. You can drag the sliders for each shape and see how it affects the face mesh.
+	  -  Import the FBX into Maya. Choose the "Sculpting" layout from the top right "Workspaces" dropdown menu. It will change the layout of Maya to bring up the Blendshapes. This is a screenshot of what the blendshapes will come out as when you open the Reallusion FBX file in Maya. You can drag the sliders for each shape and see how it affects the face mesh.
 	
 
-![maya screenshot](Media/reallusion1.png)
+![reallusion blendshapes](Media/reallusion1.png)
 
-   - After the import in done, there are some textures are transparent. It is an easy fix!
-	  - In Maya, just switch workspace modes to "maya classic".
-	  - Then select the mesh and select the attribute editor tab on the far right and select the farthest tab. 
-	  - You will see a transparency slider grayed out. Right click on it and select "break connection".
-	  - And the texture will be fixed! 
-	  
+   - After the import is done, you see all the blendshape names and will have key frames selected on some of them.
+	  - In Maya, make sure the workspace name should open as "sculpting""
+	  - If you want to turn of the red dots, you can select all the blendshapes and right click on the red button and select "remove key frame" 
+	 
+	 
+![reallusion](Media/reallusion2.png)
 
-![maya screenshot](https://i.ibb.co/3BWk5bL/Autodesk-Maya-2018-Educational-Version-untitled-6-24-2020-8-12-06-PM-2.png)
-
-![maya screenshot](https://i.ibb.co/cTY1xX9/Autodesk-Maya-2018-Educational-Version-untitled-6-24-2020-8-12-55-PM-3.png)
-
-   - Apply the fix for all the meshes and switch back the workspace to "sculpting".
-	  - **Editing Blendshapes in Maya from Fuse:**
-If you select the face mesh, you will see all the targets for the facial movements. Fuse will give you three blendshape groups, the last group is the one you want to focus on. If you change the workspace in maya to "Sculpting", you will be able to see the amount of blendshapes easier. 
-
+  
 When you select the blendshape targets you can move the sliders back and forth and you will be able to see eye’s blinking and the mouth opening and closing. Once you have your character all set up in Maya, you can save this file as a Maya Ascii file. Make sure the file is saved with a .ma extension. Make a folder for this project and place this file in it.  For simplicity’s sake use a root directory (D:\BlendshapesFaceTracking) this is  important for the next steps that involve running a python script. 
 
-On the right, you see the name “blendShape1” You can rename these groups like  “_ncl1_1”. The group of **“_ncl1_2”** is where most of the animations are. You need to rename the groups with circle square icons and a little “ +” sign next to it like “_ncl1_2” to Blendshape_[ name of mesh]. 
+On the right, you will need to rename the blendshape group of “CC3_Base_Body_ncl1_1” to Blendshape_[ name of mesh]. 
 
-![Maya screenshot](https://i.ibb.co/D9QDx1n/Annotation-2020-02-27-110918.png)
+![reallusion](Media/reallusion7.png)
 
-   - **Merging Blendshapes in Fuse:**
-	  - There are three blendshapes that need to be merged in maya, first, you need to identify.
-	  - BrowsOuterLower_Lefft and BrowsOuterLower_Right.
-	  - MouthNarrow_Left and MouthNarrow_Right.
-	  - CheekPuff_Left and CheekPuff_Right.
+   - **Merging Blendshapes in Maya:**
+	  - There are two blendshapes that need to be merged and one renamed  in maya, first, you need to identify.
+	  - Brow_Raise_Inner_L and Brow_Raise_Inner_R.
+	  - Cheek_Blow_L and Cheek_Blow_R.
+	  - Mouth_Blow
 
-Once you can see all the blendshapes, shown in the previous picture, scroll all the way down look for three type.
+Once you can see all the blendshapes, shown in the previous picture, scroll all the way down look for three types.
 
-![Maya screenshot](https://i.ibb.co/jwNDpVd/Annotation-2020-02-27-125500.png)
+![reallusion](Media/reallusion8.png)
 
-In this example picture you want to select both the Left and Right blendshapes. Be sure to drag the toggles all the way to the right and select both Left and Right blendshapes and right click into one of them and select mirror targets. Once it is merged you need to find the name again, and rename it to cheekPuff, the name has to be exact!
+In this example picture you want to select both the Left and Right blendshapes. Be sure to drag the toggles all the way to the right and select both Left and Right blendshapes and right click into one of them and select merge targets. Once it is merged you need to find the name again, and rename it to **browInnerUp**, the name has to be exact!
 
    - **Repeat the process for all three, then rename the merged blendshape to the names in bold:**
-	 - BrowsOuterLower_Lefft and BrowsOuterLower_Right = **browInnerUp**
-	 - MouthNarrow_Left and MouthNarrow_Right = **mouthPucker**
-	 - CheekPuff_Left and CheekPuffRight = **cheekPuff**
+	 - Brow_Raise_Inner_L and Brow_Raise_Inner_R = **browInnerUp**
+	 - Mouth_Blow = **mouthPucker**
+	 - Cheek_Blow_L and Cheek_Blow_R = **cheekPuff**
 
-![Maya screenshot](https://i.ibb.co/2dZDwgv/Autodesk-Maya-2018-Educational-Version-E-Python-Sripts-Python-Sripts-fuse-RLab-ma-6-24-2020-8-23-29-PM-2.png)
-
+   - Here are some screenshots for reference
+![Reallusion](Media/reallusion9.png)
+![reallusion](Media/reallusion10.png)
+![reallusion](Media/reallusion11.png)
+![reallusion](Media/reallusion12.png)
 
 **Be sure to save this file as a “.ma” (maya ASCII) file for running python script later on!**
-
-
-**2. Exporting blendshapes from Fuse and importing into Maya**
-  - **Getting the Blendshapes out of MakeHuman/Blender:**
-     - The MakeHuman and Blender workflow integrates these two open source software platforms to extract the blendshapes associated with all of the parametric sliders for crafting your avatar.  You’ll need to install two plugins to MakeHuman and one to Blender. Both are free downloads and have robust communities.
-  - **Editing Blendshapes in Maya from MakeHuman:**
-     - Once you make the switch, you will see a bunch of orange targets, these are the blendshapes. You can toggle between how strong you want each target to be for animation purposes. It’s basically like a light dimmer. 
-    -[Makehuman](http://www.makehumancommunity.org/content/downloads.html) (new link for community [edition](http://download.tuxfamily.org/makehuman/nightly/makehuman-community-1.2.0-alpha4-win32.zip))
-    -[Blender](https://www.blender.org/download/)
-
-![make human screen shot](https://i.ibb.co/8zsWQsh/Make-Human-Community-1-2-0-Beta1-HEAD-748a570b-Untitled-6-25-2020-5-08-27-PM.png)
-
-**Installing the Plugins**
-Once both are installed let’s grab the plugins and turn them on.
-
-All the plugins needed are [on one page](http://www.makehumancommunity.org/content/plugins.html)
-
-Under the Plugins for MakeHuman section download MHAPI and Forked MHX2. The Forked MHX2 has both the plugin for MakeHuman and Blender.
-
-   - In MakeHuman:
-        - [From the MakeHuman Documentation](http://www.makehumancommunity.org/wiki/FAQ:I_downloaded_a_third_party_plug-in._How_do_I_install_it%3F).
-        - On PC the Plugins go in the “plugins” folder wherever you installed MakeHuman.
-
-![mkhu pc set up](https://i.ibb.co/bH5HNKH/Work-flow-for-facial-tracking-Google-Docs-Google-Chrome-6-25-2020-6-36-48-PM-2.png)
-
-   - On Mac the Plugins go inside the MakeHuman.app. Navigate to your Applications folder and right-click on your MakeHuman.app and select “Show Package Contents” and then put the plugins in this location. Note that it goes into the plugin folder in Resources, not the Plugin folder in the root Content folder.
-
-![mac set up](https://i.ibb.co/DMpjfbW/Work-flow-for-facial-tracking-Google-Docs-Google-Chrome-6-25-2020-6-37-28-PM-2.png)
-
-   - Copy the 9_export_mhx2 folder and paste it in the plugins folder where MakeHuman is installed.
-   - Unzip MHAPI and copy the folder 1_mhapi in the same plugins folder where MakeHuman is installed. 
-
- - **In Blender:** 
-    - Zip up the folder import_runtime_mhx2 and open the Blender application. Go to Edit -> Preferences -> Add-ons. Select “Install” and look for the zipped folder.
-![blender set up](https://i.ibb.co/khfv10x/Work-flow-for-facial-tracking-Google-Docs-Google-Chrome-6-25-2020-6-59-29-PM-2.png)
-
-    - Exporting from MakeHuman.
-    - Create your avatar in MakeHuman. Put your character into a T-Pose before exporting.  Go to Files -> Export and Select MakeHuman Exchange (mhx2), then check the box for Poses on the right Options menu.  Blendshapes are called Targets in MakeHuman and they are used in the Poses.  If you do not see these options, check your plugin installation.
-
-![Make human export](https://i.ibb.co/vQXVNdX/Work-flow-for-facial-tracking-Google-Docs-Google-Chrome-6-25-2020-7-36-36-PM-2.png)
-
-  - **Importing into Blender**
-  - Now Open Blender and navigate to File -> Import -> MakeHuman (.mhx2).  On the import window select your file from MakeHuman and Check the box on the right for Override Exported Data.  Under Import Human Type check Face Shapes. Under Rigging choose the Rig Type Humanik.
-
-![Blnder set up](https://i.ibb.co/W54b0YG/blendersetup.png)
-
-![Blender import](https://i.ibb.co/4gvR1gm/Blender-6-23-2020-8-21-51-PM-2.png)
-
-  - Export as FBX from Blender. Turn off “Apply Modifiers” in the Geometry section of the FBX export options.
-  - **In Maya from MakeHuman/Blender:**
-After you created the model in Blender, and it is exported as a FBX, open the file in Maya. Make sure to delete the default cube, light, and camera from the Blender scene first.
-
-Once you import the model in Maya you should scale the bone joint size. In the toolbar look for Display > Animation > Joint Size. Scale it down to whatever is comfortable for you. This is to make it easier to see the animation of the blendshapes. 
-
-Then switch the workspace mode to sculpting this will layout the blendshapes in a easier way to see. 
-
-  - **Editing Blendshapes in Maya from MakeHuman:**
-  - Once you make the switch, you will see a bunch of orange targets, these are the blendshapes. You can toggle between how strong you want each target to be for animation purposes. It’s basically like a light dimmer.
-
-![makehuman blendshapes](https://i.ibb.co/YfqrB1Z/Autodesk-Maya-2018-Educational-Version-untitled-6-23-2020-8-33-46-PM.png)
-
-When you open up the model in maya, you should see one blendshape group, in this example its called “Body_ncl1_4” rename it to **Blendshape_mesh**. 
-
-![blend shape group](https://i.ibb.co/D9QDx1n/Annotation-2020-02-27-110918.png)
-
-   - **Merging Blendshapes in MakeHuman:**
-      - The two blendshapes that need merging are:
-         - mouth_narrow_left and mouth_narrow_right = **mouthPucker**
-         - cheek_balloon_left and cheek_balloon_right = **cheekPuff**
-
-Be sure to rename Brow_squeeze = **browInnerUp**  This one is already merged! But just needs to be a different name so it can work with Apple!!
-
-In maya, you want to locate these two pairs of blendshapes and merge them. In order to merge the two targets correctly you will need to select them both, for example “mouth_narrow_left and mouth_narrow_right” and drag the toggles all the way to the right and right click into them and hit merge.  Once they are merged you need to look for it again and there will only be one name, select it and rename it mouthPucker, it has to be exactly spelled like that.  Repeat the steps for cheek_balloon_left and cheek_balloon_right. 
-
-![merge targets](https://i.ibb.co/jwNDpVd/Annotation-2020-02-27-125500.png)
-
-Now that you have all the blendshapes renamed and the merged blendshapes working, you can export this file as a fbx 2018 file and import it into Unreal!
-
 
 # Setting Up Our Python Script
 
@@ -281,11 +199,10 @@ If you need further assistance, refer to this documentation from Unreal: https:/
 
 Once it is imported into Unreal. You should be able to open up the skeletal mesh asset and see the renamed blendshapes. Test the sliders to see if they work on the model. 
 
-### Fuse example
-![unreal fuse blendshapes](https://i.ibb.co/6R2XJRH/Annotation-2020-02-11-105608.png)
+### Reallusion example
 
-### Makehuman example
-![ unreal mkhuman blendshapes](https://i.ibb.co/m8K1n8s/Annotation-2020-02-28-115732.png)
+![reallusion](Media/reallusion6.png)
+
 
 If you see an error or the blendshapes are named differently, make sure to double check the grouping name of the blendshapes, this is the group that should be named “Blendshape_mesh”. 
 
@@ -297,7 +214,7 @@ Our repo will have everything set up for you to test the Livelink app on yor pho
 
 ## Adding eye movements
 
-  **How to make eyes move** (try this out on our sample makehuman model). 
+  **How to make eyes move** (try this out on our sample reallusion model). 
   1. Create a new PoseAsset (Create Asset - Create PoseAsset - Current Pose)
         - ![1](https://i.ibb.co/nC3VtpV/1.png)
   2.  In the PoseAsset, add eye movements. 
