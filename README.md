@@ -64,7 +64,7 @@ There are multiple ways to have a fully rigged character and have a facial rig s
 ![Reallusion](Media/reallusion3.png)
 
    - After you select the base model, you are ready to export as a fbx file
-   ![Reallusion](Media/reallusion4.png)
+![Reallusion](Media/reallusion4.png)
 
    - **Export settings**
      - Make sure you select Unreal.
