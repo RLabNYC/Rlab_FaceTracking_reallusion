@@ -10,7 +10,7 @@ Todd Bryant, Kat Sullivan, Grant Ng and Jiuxin Zhu
 To learn more about us visit our website [here](https://www.rlab.nyc/)
 
 ## Description
-Now with ARKit and an iPhone with a front-facing True Depth camera you can track your facial features allowing you animate digital avatars. The avatars first have to be prepared with point-level animation called blendshapes.  ARKit uses 52 of these to animate the avatar faces.  3D modelling is a craft that takes a long time to master and setting up all of these blendshapes can be daunting, so we’ve developed a workflow to ease the barrier to get your character up and running in a matter of minutes by leveraging two free avatar creation tools: Adobe Fuse and MakeHuman. Both programs have more than enough blendshapes to animate a face, the just need to be renamed to the ARKit conventions. We’ve developed a simple script to automate of lot of this process.
+Now with ARKit and an iPhone with a front-facing True Depth camera you can track your facial features allowing you animate digital avatars. The avatars first have to be prepared with point-level animation called blendshapes.  ARKit uses 52 of these to animate the avatar faces.  3D modelling is a craft that takes a long time to master and setting up all of these blendshapes can be daunting, so we’ve developed a workflow to ease the barrier to get your character up and running in a matter of minutes by leveraging two free avatar creation tools: Reallusion, Adobe Fuse, and MakeHuman. All three programs have more than enough blendshapes to animate a face, they just need to be renamed to the ARKit conventions. We’ve developed a simple script to automate of lot of this process. We set up a simple project for you get started so please feel free to adapt or add more blendshapes if necessary. 
 
 ### Fuse example (added eye movements)
 ![gif of me](Media/rlabfuse.gif)
@@ -18,8 +18,12 @@ Now with ARKit and an iPhone with a front-facing True Depth camera you can track
 ### MakeHuman example
 ![gif of me](Media/rlabmkhu.gif)
 
+### Reallusion example
+![gif of me](Media/reallusion.gif)
+
 
 ### Required Software To Be Installed: 
+* Reallusion Character Creation 3: https://www.reallusion.com/character-creator/ (Free trial version is available with limited exports!)
 * Fuse downloaded from here: https://www.adobe.com/products/fuse.html
 * Need to create a mixamo account (Its free!): https://www.mixamo.com/#/
 * MakeHuman downloaded here: http://www.makehumancommunity.org/
@@ -32,18 +36,15 @@ Now with ARKit and an iPhone with a front-facing True Depth camera you can track
 * Maya 2018 or 2019
 * Blender 2.83
 * Python 3.8  
-
 This tutorial requires some knowledge of using 3D software and game engine mechanics. We will provide more links for beginners that walk you through a more in depth overview. 
 
-### This document will be divided up into sections and address the workflow for converting characters for Face Tracking in both MakeHuman and Fuse in parallel.
+### This document will be divided up into sections and address the workflow for converting characters for Face Tracking in Character Creator 3.
 1. Exporting Blendshapes from character creator software and importing into Maya
-   - Fuse to Mixamo
-   - Mixamo to Maya
-   - Editing Blendshapes in Maya from Fuse
-   - MakeHuman to Blender
-   - Blender to Maya
-   - Editing Blendshapes in Maya from MakeHuman
-   - Merging Blendshapes
+   - Opening up Character Creator 3 (CC3)
+   - Starting with a base model
+   - Export as a fbx
+   - Import into Maya
+   - Fixing blendshapes
 2. Python Scripting
    - Knowledge and Filestructuring
    - Renaming the blendshapes
@@ -56,27 +57,28 @@ This tutorial requires some knowledge of using 3D software and game engine mecha
 First steps you need to have the LiveLink app downloaded onto your iPhone before you start this tutorial. Then download or clone this repository somewhere on your computer. 
 There are multiple ways to have a fully rigged character and have a facial rig set up in minutes. 
 
-**1. Exporting blendshapes from Fuse and importing into Maya**
-   - **Adobe Fuse to Mixamo:**
-   - Once you have downloaded Fuse, go through the process of creating your custom character. Make your character look however you want. Keep the model simple and avoid facial hair or eyelashes. Once you are at the last step, Fuse has a button at the top of the screen to bring your character into Mixamo. Click on “send to mixamo”. 
+**1. Exporting blendshapes from CC3 and importing into Maya**
+   - **After Opening CC3:**
+   - Once you have downloaded Character Creator 3, open the program and in the content window, select base icon (It has two people), there will be several drop downs, select "Full body" and choose a CC3 female or male base. 
 
-![mixamo screenshot](https://i.ibb.co/CM961X8/Annotation-2020-02-06-151238.png)
+![Reallusion](Media/reallusion3.png)
 
-   - After you click on "send to mixamo", your internet browser will open up and Mixamo will open automatically. Once mixamo’s algorithm is finished rigging your character, you will see two dropdown selections on the bottom of the screen. 
+   - After you select the base model, you are ready to export as a fbx file
+   ![Reallusion](Media/reallusion4.png)
 
-   ![mixamo screenshot2](https://i.ibb.co/n30TyF1/Annotation-2020-02-06-151833.png)
+   - **Export settings**
+     - Make sure you select Unreal.
+     - FBX Options are Mesh and Motion. 
+     - Under include motion select "Current Pose"
+	 - Make sure "Delete hidden faces" IS NOT CHECKED (this is for blendshapes). 
+![reallusion](media/reallusion5.png)
 
-   - **For the dropdowns:**
-     - Make sure facial blendshapes are enabled.
-     - Skeleton LOD 65 is fine for basic movement. 
-     - Hit update rig button and you're free to download your character to your computer! 
-
-Download your character as FBX. It should already be rigged and in a T-Pose.
-   - **Mixamo to Maya**
+Download your character as FBX. It should already be rigged and in a T-Pose. (Your character should start out as a t-pose by deafault). 
+   - **Reallusion to Maya**
 	  -  Import the FBX into Maya. Choose the "Sculpting" layout from the top right "Workspaces" dropdown menu. It will change the layout of Maya to bring up the Blendshapes. This is a screenshot of what the blendshapes will come out as when you open the Fuse FBX file in Maya. You can drag the sliders for each shape and see how it affects the face mesh.
 	
 
-![maya screenshot](https://i.ibb.co/SXKrGzw/Autodesk-Maya-2018-Educational-Version-untitled-6-24-2020-8-10-18-PM-2.png)
+![maya screenshot](Media/reallusion1.png)
 
    - After the import in done, there are some textures are transparent. It is an easy fix!
 	  - In Maya, just switch workspace modes to "maya classic".
