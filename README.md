@@ -291,6 +291,7 @@ Look on the app store on your iPhone and download the *Live Link Face* app. To L
 
   - Type in your ip adress
   - To find out what your IPv4 adress is:
+
 On PC: Open the command line and type in
 ```
 ipconfig
