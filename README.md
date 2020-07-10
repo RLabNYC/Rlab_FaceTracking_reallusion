@@ -34,8 +34,8 @@ Now with ARKit and an iPhone with a front-facing True Depth camera you can track
 * Unreal version 4.25 
 * Live Link Face app for iOS (Requires iOS 13.0 or later). Compatable with iPhone, iPad, and iPod touch. 
 * Maya 2018 or 2019
-* Blender 2.83
 * Python 3.8  
+
 This tutorial requires some knowledge of using 3D software and game engine mechanics. We will provide more links for beginners that walk you through a more in depth overview. 
 
 ### This document will be divided up into sections and address the workflow for converting characters for Face Tracking in Character Creator 3.
