@@ -12,14 +12,19 @@ To learn more about us visit our website [here](https://www.rlab.nyc/)
 ## Description
 Now with ARKit and an iPhone with a front-facing True Depth camera you can track your facial features allowing you animate digital avatars. The avatars first have to be prepared with point-level animation called blendshapes.  ARKit uses 52 of these to animate the avatar faces.  3D modelling is a craft that takes a long time to master and setting up all of these blendshapes can be daunting, so we’ve developed a workflow to ease the barrier to get your character up and running in a matter of minutes by leveraging two free avatar creation tools: Reallusion, Adobe Fuse, and MakeHuman. All three programs have more than enough blendshapes to animate a face, they just need to be renamed to the ARKit conventions. We’ve developed a simple script to automate of lot of this process. We set up a simple project for you get started so please feel free to adapt or add more blendshapes if necessary. 
 
+## Reallusion example
+Welcome! This is the Reallusion workflow for facial tracking! This is an example of what a reallusion character will look like with facetracking. 
+![gif of me](Media/reallusion.gif)
+
+We made other repos that incorporate other free 3D character creation, please check them out! 
+
 ### Fuse example (added eye movements) - link to repo [here](https://github.com/RLabNYC/Rlab_FaceTracking_fuse)
-![gif of me](Media/rlabfuse.gif)
+
 
 ### MakeHuman example - link to repo [here](https://github.com/RLabNYC/Rlab_FaceTracking_mkhu)
-![gif of me](Media/rlabmkhu.gif)
 
-### Reallusion example
-![gif of me](Media/reallusion.gif)
+
+
 
 
 ### Required Software To Be Installed: 
