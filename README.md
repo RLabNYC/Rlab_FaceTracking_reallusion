@@ -18,7 +18,7 @@ Welcome! This is the **Reallusion** workflow for facial tracking! This is an exa
 
 ![gif of me](Media/reallusion.gif)
 
-We made other repos that incorporate other free 3D character creation, please check them out! 
+We made other repos that incorporate other free 3D modeling softwares, please check them out! 
 
 ### Fuse example (added eye movements) - link to repo [here](https://github.com/RLabNYC/Rlab_FaceTracking_fuse)
 
