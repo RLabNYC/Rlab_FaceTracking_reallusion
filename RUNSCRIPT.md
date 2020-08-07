@@ -44,6 +44,6 @@ In this example picture you want to select both the Left and Right blendshapes. 
 ![reallusion](Media/reallusion11.png)
 ![reallusion](Media/reallusion12.png)
 
-# The next steps are [here](https://github.com/RLabNYC/Rlab_FaceTracking_mkhu/blob/master/IMPORTING.md)
+# The next steps are [here](https://github.com/RLabNYC/Rlab_FaceTracking_reallusion/blob/master/IMPORTING.md)
 
 ## If you need to go back to the table of [contents](https://github.com/RLabNYC/RLab_Facetracking). For the reallusion modeling steps go [here](https://github.com/RLabNYC/Rlab_FaceTracking_reallusion/blob/master/README.md)
