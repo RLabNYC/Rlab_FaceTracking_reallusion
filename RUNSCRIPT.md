@@ -17,9 +17,7 @@
 ![reallusion](Media/reallusion2.png)
 
   
-When you select the blendshape targets you can move the sliders back and forth and you will be able to see eyeís blinking and the mouth opening and closing. Once you have your character all set up in Maya, you can save this file as a Maya Ascii file. Make sure the file is saved with a .ma extension. Make a folder for this project and place this file in it.  For simplicityís sake use a root directory (D:\BlendshapesFaceTracking) this is  important for the next steps that involve running a python script. 
-
-On the right, you will need to rename the blendshape group of ìCC3_Base_Body_ncl1_1î to Blendshape_[ name of mesh]. 
+When you select the blendshape targets you can move the sliders back and forth and you will be able to see eye‚Äôs blinking and the mouth opening and closing. On the right, you will need to rename the blendshape group of ‚ÄúCC3_Base_Body_ncl1_1‚Äù to Blendshape_[ name of mesh]. 
 
 ![reallusion](Media/reallusion7.png)
 
