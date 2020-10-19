@@ -35,8 +35,8 @@ In this example picture you want to select both the Left and Right blendshapes. 
 
    - **Repeat the process for all three, then rename the merged blendshape to the names in bold:**
 	 - Brow_Raise_Inner_L and Brow_Raise_Inner_R = **browInnerUp**
-	 - Mouth_Blow = **mouthPucker**
 	 - Cheek_Blow_L and Cheek_Blow_R = **cheekPuff**
+	 - Mouth_Blow = **mouthPucker**
 
    - Here are some screenshots for reference
 ![Reallusion](Media/reallusion9.png)
